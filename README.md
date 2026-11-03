@@ -10,6 +10,8 @@ Technologies Used
  HTML
  Random Module
  String Module
+ CSS
+ Java Script
 
 features 
  convert the long urls into shot url
@@ -35,6 +37,11 @@ open in browser
 200 - homepage loads successfully
 302 - users needs to be redirected
 404 - requested URL dosent exist
+
+Testing
+pytest testing
+
 Auther
 Ashlin Mirsha R K
 CSE student
+
