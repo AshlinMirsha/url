@@ -32,7 +32,9 @@ In Terminal
      pip install flask
      python app.py
 open in browser
-
+200 - homepage loads successfully
+302 - users needs to be redirected
+404 - requested URL dosent exist
 Auther
 Ashlin Mirsha R K
 CSE student

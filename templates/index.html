@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickLink - URL Shortener</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">QuickLink</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Section -->
+    <section class="main-section">
+
+        <div class="content">
+
+            <h1>Shorten Your Long URLs</h1>
+
+            <p>
+                Make your links shorter, cleaner and easier to share.
+            </p>
+
+
+            <!-- URL Form -->
+            <form method="POST" class="url-form">
+
+                <input
+                    type="url"
+                    name="URL"
+                    placeholder="Paste your long URL here..."
+                    required
+                >
+
+                <button type="submit">
+                    Shorten URL
+                </button>
+
+            </form>
+
+
+            <!-- Result Section -->
+            {% if short_url %}
+
+            <div class="result-box">
+
+                <h3>Your Shortened URL</h3>
+
+                <div class="short-link">
+
+                    <a href="{{ short_url }}" target="_blank">
+                        {{ short_url }}
+                    </a>
+
+                    <button onclick="copyURL()">
+                        Copy
+                    </button>
+
+                </div>
+
+                <p id="copy-message"></p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <h2>About QuickLink</h2>
+
+        <p>
+            QuickLink is a simple URL shortening application
+            developed using Python and Flask.
+            It converts long URLs into short and shareable links.
+        </p>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 QuickLink | Python URL Shortener</p>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
